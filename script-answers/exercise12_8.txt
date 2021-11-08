@@ -1,0 +1,63 @@
+Script started on 2021-11-08 16:43:18+07:00 [TERM="xterm-256color" TTY="/dev/pts/2" COLUMNS="120" LINES="30"]
+To run a command as administrator (user "root"), use "sudo <command>".
+See "man sudo_root" for details.
+
+]0;heriyantoliu@ABY-400645: /mnt/c/D/Workbench/FSO-exercise-12/script-answers[01;32mheriyantoliu@ABY-400645[00m:[01;34m/mnt/c/D/Workbench/FSO-exercise-12/script-answers[00m$ exitdocker exec -it todo-backend-mongo-1 bash
+]0;root@623d13c21ffe: /root@623d13c21ffe:/# mongo -u root -p example
+MongoDB shell version v5.0.3
+connecting to: mongodb://127.0.0.1:27017/?compressors=disabled&gssapiServiceName=mongodb
+Implicit session: session { "id" : UUID("ade853aa-3fc2-4c4d-8f27-f20bca2652cd") }
+MongoDB server version: 5.0.3
+================
+Warning: the "mongo" shell has been superseded by "mongosh",
+which delivers improved usability and compatibility.The "mongo" shell has been deprecated and will be removed in
+an upcoming release.
+We recommend you begin using "mongosh".
+For installation instructions, see
+https://docs.mongodb.com/mongodb-shell/install/
+================
+---
+The server generated these startup warnings when booting: 
+        2021-11-08T09:25:45.704+00:00: Using the XFS filesystem is strongly recommended with the WiredTiger storage engine. See http://dochub.mongodb.org/core/prodnotes-filesystem
+        2021-11-08T09:25:48.530+00:00: /sys/kernel/mm/transparent_hugepage/enabled is 'always'. We suggest setting it to 'never'
+---
+---
+        Enable MongoDB's free cloud-based monitoring service, which will then receive and display
+        metrics about your deployment (disk utilization, CPU, operation statistics, etc).
+
+        The monitoring data will be available on a MongoDB website with a unique URL accessible to you
+        and anyone you share the URL with. MongoDB may use this information to make product
+        improvements and to suggest MongoDB products and deployment options to you.
+
+        To enable free monitoring, run the following command: db.enableFreeMonitoring()
+        To permanently disable this reminder, run the following command: db.disableFreeMonitoring()
+---
+> show dbs[3G[Jshow dbs[11G
+admin         0.000GB
+config        0.000GB
+local         0.000GB
+the_database  0.000GB
+> use the_database[3G[Juse the_database[19G
+switched to db the_database
+> show colletion[3G[Jshow colletio[16G[3G[Jshow colleti[15G[3G[Jshow collet[14G[3G[Jshow colle[13Gctions[3G[Jshow collections[19G
+todos
+> db.todos.find({}_[3G[Jdb.todos.find({}[19G)[3G[Jdb.todos.find({})[20G
+{ "_id" : ObjectId("6188dbc352e5fe7cdfd5f39c"), "text" : "Write code", "done" : true }
+{ "_id" : ObjectId("6188dbc352e5fe7cdfd5f39d"), "text" : "Learn about containers", "done" : false }
+> db.todos.insertOne({ text: "[3G[Jdb.todos.insertOne({ text: [30G'Increase the number of toold[3G[Jdb.todos.insertOne({ text: 'Increase the number of tool[58Gs in my toolbelt', statys[3G[Jdb.todos.insertOne({ text: 'Increase the number of tools in my toolbelt', staty[82G[3G[Jdb.todos.insertOne({ text: 'Increase the number of tools in my toolbelt', stat[81Gus: false })[3G[Jdb.todos.insertOne({ text: 'Increase the number of tools in my toolbelt', status: false })[93G
+{
+	"acknowledged" : true,
+	"insertedId" : ObjectId("6188f1e0bccd62652b7b457d")
+}
+> [3G[Jdb.todos.insertOne({ text: 'Increase the number of tools in my toolbelt', status: false })[93G[3G[Jdb.todos.find({})[20G[3G[Jdb.todos.find({})[20G
+{ "_id" : ObjectId("6188dbc352e5fe7cdfd5f39c"), "text" : "Write code", "done" : true }
+{ "_id" : ObjectId("6188dbc352e5fe7cdfd5f39d"), "text" : "Learn about containers", "done" : false }
+{ "_id" : ObjectId("6188f1e0bccd62652b7b457d"), "text" : "Increase the number of tools in my toolbelt", "status" : false }
+> exit[3G[Jexit[7G
+bye
+]0;root@623d13c21ffe: /root@623d13c21ffe:/# exit
+exit
+]0;heriyantoliu@ABY-400645: /mnt/c/D/Workbench/FSO-exercise-12/script-answers[01;32mheriyantoliu@ABY-400645[00m:[01;34m/mnt/c/D/Workbench/FSO-exercise-12/script-answers[00m$ exit
+exit
+
+Script done on 2021-11-08 16:46:20+07:00 [COMMAND_EXIT_CODE="0"]
