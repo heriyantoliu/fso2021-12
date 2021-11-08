@@ -1,0 +1,86 @@
+Script started on 2021-11-08 13:38:20+07:00 [TERM="xterm-256color" TTY="/dev/pts/2" COLUMNS="120" LINES="30"]
+To run a command as administrator (user "root"), use "sudo <command>".
+See "man sudo_root" for details.
+
+]0;heriyantoliu@ABY-400645: /mnt/c/D/Workbench/FSO-exercise-12/script-answers[01;32mheriyantoliu@ABY-400645[00m:[01;34m/mnt/c/D/Workbench/FSO-exercise-12/script-answers[00m$ exitdocker start -i elastic_bose 
+]0;root@f970836c9505: /root@f970836c9505:/# [K]0;root@f970836c9505: /root@f970836c9505:/# curl -sL http://   s://deb.nodesource.com/setup_16.x | bash
+
+## Installing the NodeSource Node.js 16.x repo...
+
+
+## Populating apt-get cache...
+
++ apt-get update
+0% [Working]            Hit:1 http://archive.ubuntu.com/ubuntu focal InRelease
+0% [Connecting to security.ubuntu.com (91.189.91.39)]                                                     0% [Waiting for headers] [Waiting for headers]                                              Get:2 http://archive.ubuntu.com/ubuntu focal-updates InRelease [114 kB]
+0% [2 InRelease 2624 B/114 kB 2%] [Waiting for headers]                                                       Hit:3 http://security.ubuntu.com/ubuntu focal-security InRelease
+                                                       0% [2 InRelease 15.5 kB/114 kB 14%]0% [2 InRelease 42.9 kB/114 kB 38%]                                   0% [Working]0% [Waiting for headers]                        Get:4 http://archive.ubuntu.com/ubuntu focal-backports InRelease [101 kB]
+0% [4 InRelease 4084 B/101 kB 4%]                                 0% [Working]33% [Waiting for headers]                         Get:5 http://archive.ubuntu.com/ubuntu focal-updates/universe amd64 Packages [1090 kB]
+33% [5 Packages 5549 B/1090 kB 1%]41% [5 Packages 138 kB/1090 kB 13%]49% [5 Packages 271 kB/1090 kB 25%]57% [5 Packages 403 kB/1090 kB 37%]65% [5 Packages 535 kB/1090 kB 49%]74% [5 Packages 668 kB/1090 kB 61%]81% [5 Packages 792 kB/1090 kB 73%]89% [5 Packages 919 kB/1090 kB 84%]97% [5 Packages 1045 kB/1090 kB 96%]                                                                        201 kB/s 0s99% [Working]                                                                                               201 kB/s 0s99% [5 Packages store 0 B]                                                                                  201 kB/s 0s100% [Working]                                                                                              201 kB/s 0s                                                                                                                       Fetched 1305 kB in 7s (199 kB/s)
+Reading package lists... 0%Reading package lists... 0%Reading package lists... 0%Reading package lists... 6%Reading package lists... 6%Reading package lists... 7%Reading package lists... 7%Reading package lists... 66%Reading package lists... 66%Reading package lists... 67%Reading package lists... 67%Reading package lists... 75%Reading package lists... 75%Reading package lists... 79%Reading package lists... 79%Reading package lists... 85%Reading package lists... 85%Reading package lists... 85%Reading package lists... 85%Reading package lists... 85%Reading package lists... 85%Reading package lists... 85%Reading package lists... 85%Reading package lists... 90%Reading package lists... 91%Reading package lists... 91%Reading package lists... 94%Reading package lists... 94%Reading package lists... 99%Reading package lists... 99%Reading package lists... 99%Reading package lists... 99%Reading package lists... Done
+
+## Installing packages required for setup: lsb-release gnupg...
+
++ apt-get install -y lsb-release gnupg > /dev/null 2>&1
+
+## Confirming "focal" is supported...
+
++ curl -sLf -o /dev/null 'https://deb.nodesource.com/node_16.x/dists/focal/Release'
+
+## Adding the NodeSource signing key to your keyring...
+
++ curl -s https://deb.nodesource.com/gpgkey/nodesource.gpg.key | gpg --dearmor | tee /usr/share/keyrings/nodesource.gpg >/dev/null
+
+## Creating apt sources list file for the NodeSource Node.js 16.x repo...
+
++ echo 'deb [signed-by=/usr/share/keyrings/nodesource.gpg] https://deb.nodesource.com/node_16.x focal main' > /etc/apt/sources.list.d/nodesource.list
++ echo 'deb-src [signed-by=/usr/share/keyrings/nodesource.gpg] https://deb.nodesource.com/node_16.x focal main' >> /etc/apt/sources.list.d/nodesource.list
+
+## Running `apt-get update` for you...
+
++ apt-get update
+0% [Working]            Get:1 https://deb.nodesource.com/node_16.x focal InRelease [4583 B]
+0% [Connecting to archive.ubuntu.com (91.189.88.142)] [Connecting to security.ubuntu.com (91.189.91.39)] [1 InRelease 4                                                                                                                       0% [Connecting to archive.ubuntu.com (91.189.88.142)] [Connecting to security.ubuntu.com (91.189.91.39)]0% [Connecting to archive.ubuntu.com (91.189.88.142)] [Connecting to security.ubuntu.com (91.189.91.39)]                                                                                                        Hit:2 http://archive.ubuntu.com/ubuntu focal InRelease
+                                                                                                        0% [Waiting for headers] [Waiting for headers]0% [Waiting for headers] [Waiting for headers] [Waiting for headers]                                                                    Hit:3 http://security.ubuntu.com/ubuntu focal-security InRelease
+                                                                    0% [Waiting for headers] [Waiting for headers]                                              Hit:4 http://archive.ubuntu.com/ubuntu focal-updates InRelease
+                                              0% [Waiting for headers]0% [Waiting for headers] [Waiting for headers]0% [Waiting for headers] [Waiting for headers]                                              Get:5 https://deb.nodesource.com/node_16.x focal/main amd64 Packages [767 B]
+0% [Waiting for headers] [5 Packages 767 B/767 B 100%]                                                      0% [Waiting for headers]                        Get:6 http://archive.ubuntu.com/ubuntu focal-backports InRelease [101 kB]
+0% [6 InRelease 17.0 kB/101 kB 17%]0% [5 Packages store 0 B] [6 InRelease 17.0 kB/101 kB 17%]                                                          0% [6 InRelease 17.0 kB/101 kB 17%]0% [6 InRelease 51.5 kB/101 kB 51%]                                   0% [Working]100% [Working]              Fetched 106 kB in 2s (56.8 kB/s)
+Reading package lists... 0%Reading package lists... 0%Reading package lists... 0%Reading package lists... 6%Reading package lists... 6%Reading package lists... 7%Reading package lists... 7%Reading package lists... 66%Reading package lists... 66%Reading package lists... 67%Reading package lists... 67%Reading package lists... 75%Reading package lists... 75%Reading package lists... 79%Reading package lists... 79%Reading package lists... 85%Reading package lists... 85%Reading package lists... 85%Reading package lists... 85%Reading package lists... 85%Reading package lists... 85%Reading package lists... 85%Reading package lists... 85%Reading package lists... 91%Reading package lists... 91%Reading package lists... 93%Reading package lists... 94%Reading package lists... 94%Reading package lists... 99%Reading package lists... 99%Reading package lists... 99%Reading package lists... 99%Reading package lists... 99%Reading package lists... 99%Reading package lists... Done
+
+## Run `[1msudo apt-get install -y nodejs(B[m` to install Node.js 16.x and npm
+## You may also need development tools to build native addons:
+     sudo apt-get install gcc g++ make
+## To install the Yarn package manager, run:
+     curl -sL https://dl.yarnpkg.com/debian/pubkey.gpg | gpg --dearmor | sudo tee /usr/share/keyrings/yarnkey.gpg >/dev/null
+     echo "deb [signed-by=/usr/share/keyrings/yarnkey.gpg] https://dl.yarnpkg.com/debian stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
+     sudo apt-get update && sudo apt-get install yarn
+
+
+]0;root@f970836c9505: /root@f970836c9505:/# [Ks apt   install -y nodejs
+Reading package lists... 0%Reading package lists... 0%Reading package lists... 0%Reading package lists... 6%Reading package lists... 6%Reading package lists... 7%Reading package lists... 7%Reading package lists... 66%Reading package lists... 66%Reading package lists... 67%Reading package lists... 67%Reading package lists... 75%Reading package lists... 75%Reading package lists... 79%Reading package lists... 79%Reading package lists... 85%Reading package lists... 85%Reading package lists... 85%Reading package lists... 85%Reading package lists... 85%Reading package lists... 85%Reading package lists... 85%Reading package lists... 85%Reading package lists... 91%Reading package lists... 91%Reading package lists... 94%Reading package lists... 94%Reading package lists... 94%Reading package lists... 99%Reading package lists... 99%Reading package lists... 99%Reading package lists... 99%Reading package lists... 99%Reading package lists... 99%Reading package lists... Done
+Building dependency tree... 0%Building dependency tree... 0%Building dependency tree... 50%Building dependency tree... 50%Building dependency tree       
+Reading state information... 0%Reading state information... 1%Reading state information... Done
+The following NEW packages will be installed:
+  nodejs
+0 upgraded, 1 newly installed, 0 to remove and 0 not upgraded.
+Need to get 25.8 MB of archives.
+After this operation, 120 MB of additional disk space will be used.
+[33m0% [Working][0m            Get:1 https://deb.nodesource.com/node_16.x focal/main amd64 nodejs amd64 16.13.0-deb-1nodesource1 [25.8 MB]
+[33m0% [1 nodejs 1446 B/25.8 MB 0%][0m[33m6% [1 nodejs 2072 kB/25.8 MB 8%][0m[33m14% [1 nodejs 4369 kB/25.8 MB 17%][0m[33m18% [1 nodejs 5806 kB/25.8 MB 22%][0m[33m25% [1 nodejs 8038 kB/25.8 MB 31%][0m[33m32% [1 nodejs 10.3 MB/25.8 MB 40%][0m[33m37% [1 nodejs 11.9 MB/25.8 MB 46%][0m[33m41% [1 nodejs 13.4 MB/25.8 MB 52%][0m[33m45% [1 nodejs 14.7 MB/25.8 MB 57%][0m[33m49% [1 nodejs 15.8 MB/25.8 MB 61%][0m[33m53% [1 nodejs 17.0 MB/25.8 MB 66%][0m[33m56% [1 nodejs 17.9 MB/25.8 MB 69%][0m[33m59% [1 nodejs 18.9 MB/25.8 MB 73%]                                                                         3048 kB/s 2s[0m[33m62% [1 nodejs 20.1 MB/25.8 MB 78%]                                                                         3048 kB/s 1s[0m[33m66% [1 nodejs 21.4 MB/25.8 MB 83%]                                                                         3048 kB/s 1s[0m[33m70% [1 nodejs 22.6 MB/25.8 MB 88%]                                                                         3048 kB/s 1s[0m[33m73% [1 nodejs 23.5 MB/25.8 MB 91%]                                                                         3048 kB/s 0s[0m[33m76% [1 nodejs 24.4 MB/25.8 MB 95%]                                                                         3048 kB/s 0s[0m[33m79% [1 nodejs 25.3 MB/25.8 MB 98%]                                                                         3048 kB/s 0s[0m[33m100% [Working]                                                                                             3048 kB/s 0s[0m                                                                                                                       Fetched 25.8 MB in 10s (2689 kB/s)
+debconf: delaying package configuration, since apt-utils is not installed
+
+7[0;29r8[1ASelecting previously unselected package nodejs.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 5778 files and directories currently installed.)
+Preparing to unpack .../nodejs_16.13.0-deb-1nodesource1_amd64.deb ...
+7[30;0f[42m[30mProgress: [  0%][49m[39m [..................................................................................................] 87[30;0f[42m[30mProgress: [ 20%][49m[39m [###################...............................................................................] 8Unpacking nodejs (16.13.0-deb-1nodesource1) ...
+7[30;0f[42m[30mProgress: [ 40%][49m[39m [#######################################...........................................................] 8Setting up nodejs (16.13.0-deb-1nodesource1) ...
+7[30;0f[42m[30mProgress: [ 60%][49m[39m [##########################################################........................................] 87[30;0f[42m[30mProgress: [ 80%][49m[39m [##############################################################################....................] 8
+7[0;30r8[1A[J]0;root@f970836c9505: /root@f970836c9505:/# node /usr/src/p app/index.js 
+Hello World
+]0;root@f970836c9505: /root@f970836c9505:/# [Kexit
+exit
+]0;heriyantoliu@ABY-400645: /mnt/c/D/Workbench/FSO-exercise-12/script-answers[01;32mheriyantoliu@ABY-400645[00m:[01;34m/mnt/c/D/Workbench/FSO-exercise-12/script-answers[00m$ exit
+exit
+
+Script done on 2021-11-08 13:40:26+07:00 [COMMAND_EXIT_CODE="0"]
