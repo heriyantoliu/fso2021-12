@@ -1,0 +1,43 @@
+version: '3.8'
+
+services:
+  mongo:
+    image: mongo
+    ports:
+      - 27017:27017
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: example
+      MONGO_INITDB_DATABASE: blog
+    volumes:
+      - mongo_data:/data/db
+    container_name: blog-mongo
+  server:
+    image: blog-be
+    build:
+      context: ./blog-backend
+    ports:
+      - 3000:3000
+    environment:
+      MONGODB_URI: mongodb://root:example@blog-mongo:27017/blog?authSource=admin
+      PORT: 3000
+      SECRET: fullstackopen2021-exercise
+    depends_on:
+      - mongo
+    container_name: blog-be
+  app:
+    image: blog-fe
+    build:
+      context: ./blog-frontend
+    ports:
+      - 3001:80
+    container_name: blog-fe
+  nginx:
+    image: nginx:1.20
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
+    ports:
+      - 8080:80
+    container_name: reserver-proxy
+volumes:
+  mongo_data:
