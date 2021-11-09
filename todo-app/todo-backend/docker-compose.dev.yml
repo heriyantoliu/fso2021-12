@@ -12,12 +12,28 @@ services:
     volumes:
       - ./mongo/mongo-init.js:/docker-entrypoint-initdb.d/mongo-init.js
       - mongo_data:/data/db
+    container_name: todo-mongo
   redis:
     image: redis
     ports:
       - 6379:6379
     volumes:
       - redis_data:/data
+    container_name: todo-redis
+  server:
+    image: todo-be-dev
+    build:
+      context: .
+      dockerfile: dev.Dockerfile
+    volumes:
+      - ./:/usr/src/app
+    ports:
+      - 3000:3000
+    environment:
+      MONGO_URL: mongodb://root:example@todo-mongo:27017/the_database?authSource=admin
+      REDIS_URL: redis://todo-redis:6379
+      CHOKIDAR_USEPOLLING: true
+    container_name: todo-be-dev
 
 volumes:
   mongo_data:
