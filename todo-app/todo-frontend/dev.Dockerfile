@@ -4,7 +4,7 @@ WORKDIR /usr/src/app
 
 COPY . .
 
-ENV REACT_APP_BACKEND_URL="http://192.168.96.1:3000"
+ENV REACT_APP_BACKEND_URL="http://192.168.96.1:8080/api"
 ENV CHOKIDAR_USEPOLLING="true"
 
 # Change npm ci to npm install since we are going to be in development mode
