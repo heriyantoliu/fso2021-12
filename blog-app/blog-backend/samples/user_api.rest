@@ -1,0 +1,51 @@
+@baseUrl=http://localhost:3000
+@userUrl={{baseUrl}}/api/users
+@loginUrl={{baseUrl}}/api/login
+
+//Login
+# @name token
+POST {{loginUrl}}
+Content-Type: application/json
+
+{
+  "username":"mluukkai",
+  "password":"password123"
+}
+
+###
+//Get all users
+GET {{userUrl}}
+
+
+###
+//Create user 1
+POST {{userUrl}}
+Content-Type: application/json
+
+{
+  "username": "hellas",
+  "name": "Arto Hellas",
+  "password": "password123"
+}
+
+###
+//Create user 2
+POST {{userUrl}}
+Content-Type: application/json
+
+{
+  "username": "mluukkai",
+  "name": "Matti Luukkainen",
+  "password": "password123"
+}
+
+###
+//Create user 3
+POST {{userUrl}}
+Content-Type: application/json
+
+{
+  "username": "mluukkai",
+  "name": "Matti Luukkainen",
+  "password": "pa"
+}

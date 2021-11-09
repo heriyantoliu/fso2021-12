@@ -1,0 +1,44 @@
+version: '3.8'
+
+services:
+  mongo:
+    image: mongo
+    ports:
+      - 27017:27017
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: example
+      MONGO_INITDB_DATABASE: blog
+    volumes:
+      - mongo_data:/data/db
+    container_name: blog-mongo
+  server:
+    image: blog-be-dev
+    build:
+      context: ./blog-backend
+      dockerfile: dev.Dockerfile
+    volumes:
+      - ./blog-backend:/usr/src/app
+    ports:
+      - 3000:3000
+    environment:
+      MONGODB_URI: mongodb://root:example@blog-mongo:27017/blog?authSource=admin
+      PORT: 3000
+      SECRET: fullstackopen2021-exercise
+    depends_on:
+      - mongo
+    container_name: blog-be-dev
+
+  app:
+    image: blog-fe-dev
+    build:
+      context: ./blog-frontend
+      dockerfile: dev.Dockerfile
+    volumes:
+      - ./blog-frontend:/usr/src/app
+    ports:
+      - 3001:3000
+    container_name: blog-fe-dev
+
+volumes:
+  mongo_data:
